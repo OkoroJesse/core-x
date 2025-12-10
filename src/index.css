@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Fonts - Placeholders */
+/* You need to add the font files to src/assets/fonts/ and update these paths */
+@font-face {
+  font-family: 'Beyond Control';
+  src: local('Beyond Control');
+  /* Example: src: url('/fonts/BeyondControl.ttf') format('truetype'); */
+}
+
+@font-face {
+  font-family: 'BRATTONS';
+  src: local('BRATTONS');
+  /* Example: src: url('/fonts/BRATTONS.ttf') format('truetype'); */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  @apply bg-white text-black antialiased;
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
+}
