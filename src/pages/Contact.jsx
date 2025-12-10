@@ -179,7 +179,7 @@ const Contact = () => {
             label: "Location",
             value: "Abuja, Nigeria",
             href: "#",
-            description: "Visit us at our office"
+            description: ""
         },
         {
             icon: <Clock className="w-6 h-6" />,

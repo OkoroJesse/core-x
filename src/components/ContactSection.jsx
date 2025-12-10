@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Twitter, Linkedin, Instagram, Facebook } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -150,15 +150,34 @@ const ContactSection = () => {
                         <div className="mt-12 pt-8 border-t border-gray-200">
                             <p className="text-gray-600 font-poppins text-sm mb-4">Follow us</p>
                             <div className="flex gap-4">
-                                {['Twitter', 'LinkedIn', 'Instagram', 'Facebook'].map((social, index) => (
-                                    <a
-                                        key={index}
-                                        href="#"
-                                        className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all duration-300 text-sm font-poppins font-medium"
-                                    >
-                                        {social.charAt(0)}
-                                    </a>
-                                ))}
+                                <a
+                                    href="#"
+                                    className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all duration-300"
+                                    aria-label="Twitter"
+                                >
+                                    <Twitter className="w-5 h-5" />
+                                </a>
+                                <a
+                                    href="#"
+                                    className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all duration-300"
+                                    aria-label="LinkedIn"
+                                >
+                                    <Linkedin className="w-5 h-5" />
+                                </a>
+                                <a
+                                    href="#"
+                                    className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all duration-300"
+                                    aria-label="Instagram"
+                                >
+                                    <Instagram className="w-5 h-5" />
+                                </a>
+                                <a
+                                    href="#"
+                                    className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all duration-300"
+                                    aria-label="Facebook"
+                                >
+                                    <Facebook className="w-5 h-5" />
+                                </a>
                             </div>
                         </div>
                     </div>

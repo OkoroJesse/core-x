@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Mail, Phone, MapPin, ArrowUpRight, Instagram, Twitter, Linkedin, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUpRight, Instagram, Twitter, Linkedin, Facebook, MessageCircle } from 'lucide-react';
 import Button from './Button';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -78,7 +78,7 @@ const FooterSection = () => {
                             <li><a href="/" className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors flex items-center gap-2 group">Home</a></li>
                             <li><a href="/about" className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors flex items-center gap-2 group">About Us</a></li>
                             <li><a href="/services" className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors flex items-center gap-2 group">Services</a></li>
-                            <li><a href="/#projects" className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors flex items-center gap-2 group">Portfolio</a></li>
+                            <li><a href="/#projects" className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors flex items-center gap-2 group">Projects</a></li>
                             <li><a href="/contact" className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors flex items-center gap-2 group">Contact</a></li>
                         </ul>
                     </div>
@@ -88,15 +88,21 @@ const FooterSection = () => {
                         <h4 className="text-white font-brattons font-bold text-lg mb-8 pb-3 border-b border-[#ccff00]/30 w-full">Contact Info</h4>
                         <ul className="space-y-5 w-full flex flex-col items-center md:items-start">
                             <li>
-                                <a href="tel:+2348148882303" className="flex items-center gap-3 group">
+                                <a href="tel:+2348163321478" className="flex items-center gap-3 group">
                                     <Phone className="w-5 h-5 text-[#ccff00] flex-shrink-0" />
-                                    <span className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors">08148882303</span>
+                                    <span className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors">08163321478</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:contact@websitedesigner.ng" className="flex items-center gap-3 group">
+                                <a href="mailto:hello.core-x@gmail.com" className="flex items-center gap-3 group">
                                     <Mail className="w-5 h-5 text-[#ccff00] flex-shrink-0" />
-                                    <span className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors">contact@corex.agency</span>
+                                    <span className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors">hello.core-x@gmail.com</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/2348140695734" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
+                                    <MessageCircle className="w-5 h-5 text-[#ccff00] flex-shrink-0" />
+                                    <span className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors">08140695734</span>
                                 </a>
                             </li>
                         </ul>
@@ -108,10 +114,9 @@ const FooterSection = () => {
                     <p className="text-gray-400 font-poppins text-sm">
                         © 2025 <a href="#" className="text-[#ccff00] hover:underline">Core X</a>. All Rights Reserved.
                     </p>
-                    <div className="flex gap-8 text-gray-400 font-poppins text-xs justify-center md:justify-end">
-                        <a href="#" className="hover:text-[#ccff00] transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-[#ccff00] transition-colors">Terms of Service</a>
-                    </div>
+                    <p className="text-gray-400 font-poppins text-xs">
+                        Lead developer - <a href="#" className="text-[#ccff00] hover:underline">Jesse Chinedu</a>
+                    </p>
                 </div>
             </div>
         </footer>

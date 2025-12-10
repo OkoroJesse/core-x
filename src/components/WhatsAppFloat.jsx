@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageCircle } from 'lucide-react';
 
 const WhatsAppFloat = () => {
-    const whatsappNumber = '2348148882303'; // Your WhatsApp number
+    const whatsappNumber = '2348140695734'; // Your WhatsApp number
     const whatsappMessage = 'Hello! I am interested in your services.';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

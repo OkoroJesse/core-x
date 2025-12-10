@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mail, Send } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +23,7 @@ const faqs = [
     {
         id: 1,
         question: "What services does your agency specialize in?",
-        answer: "We specialize in a comprehensive range of digital services including custom web development, UI/UX design, mobile app development, branding, and digital marketing strategies tailored to scale your business."
+        answer: "We specialize in delivering high-quality web development, modern UI/UX design, and professional web design services—crafted to elevate your brand and create seamless digital experiences."
     },
     {
         id: 2,
@@ -96,7 +97,8 @@ const FAQSection = () => {
     const sectionRef = useRef(null);
     const leftColRef = useRef(null);
     const rightColRef = useRef(null);
-    const [openIndex, setOpenIndex] = useState(0);
+    const [openIndex, setOpenIndex] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -161,7 +163,7 @@ const FAQSection = () => {
                                 Can't find the answer you're looking for? Please chat to our friendly team.
                             </p>
 
-                            <button className="w-full py-4 bg-[#ccff00] text-black font-poppins font-bold uppercase tracking-wider rounded-full hover:bg-white transition-colors duration-300 flex items-center justify-center gap-3 relative z-10 group">
+                            <button onClick={() => navigate('/contact')} className="w-full py-4 bg-[#ccff00] text-black font-poppins font-bold uppercase tracking-wider rounded-full hover:bg-white transition-colors duration-300 flex items-center justify-center gap-3 relative z-10 group">
                                 <span>Get in Touch</span>
                                 <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </button>

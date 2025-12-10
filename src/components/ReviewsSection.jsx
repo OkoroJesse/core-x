@@ -138,10 +138,7 @@ const ReviewsSection = () => {
                                         </p>
                                     </div>
 
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                                            <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
-                                        </div>
+                                    <div className="flex items-start gap-4">
                                         <div>
                                             <h4 className="font-bold font-poppins text-black">{review.name}</h4>
                                             <p className="text-sm text-gray-500 font-poppins">{review.role}</p>

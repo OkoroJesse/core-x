@@ -17,7 +17,7 @@ const blogPosts = [
         title: "The Future of Web Design: Brutalism Returns",
         category: "Design",
         date: "Oct 24, 2025",
-        author: "Alex Morgan",
+        author: "Core X Team",
         image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2070&auto=format&fit=crop",
         excerpt: "Why the raw, unpolished aesthetic is making a comeback in modern digital experiences.",
         content: "Web design has been soft and polished for years—rounded corners, smooth gradients, perfect UI. But in 2025, a bold trend is rising again: Brutalism.\n\nBrutalist web design embraces raw, unfiltered visuals. Think sharp edges, bold typography, simple layouts, and high contrast. It breaks away from the \"safe\" designs that all look the same, helping brands stand out instantly.\n\nWhy Brutalism Is Back\n\nPeople want something different from the typical clean UI. Pages load faster due to fewer graphics. It gives brands a strong, confident identity. Designers use it to show creativity in the AI era.\n\nModern Brutalism = Bold + Usable\n\nToday's brutalism (Neo-Brutalism) is cleaner, more structured, and still user-friendly. It mixes simplicity with attitude, making websites look modern, fast, and unforgettable.\n\nShould You Use It?\n\nChoose brutalism if you want a website that feels bold, edgy, and unique. It works especially well for creative agencies, tech startups, and personal brands.\n\nBrutalism isn't just a design trend—it's a statement."
@@ -27,7 +27,7 @@ const blogPosts = [
         title: "Optimizing React Performance for Scale",
         category: "Development",
         date: "Nov 12, 2025",
-        author: "Sarah Jenkins",
+        author: "Core X Team",
         image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop",
         excerpt: "Key strategies to keep your application fast and responsive as it grows in complexity.",
         content: "As React applications grow, performance can become a bottleneck. We explore advanced techniques like concurrent rendering, automatic batching, and effective use of useMemo and useCallback. We also dive into architecture patterns that decouple state management from UI components, ensuring that your app remains snappy even with thousands of components on screen."
@@ -37,7 +37,7 @@ const blogPosts = [
         title: "AI in Creative Workflows",
         category: "Technology",
         date: "Dec 05, 2025",
-        author: "Marcus Chen",
+        author: "Core X Team",
         image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
         excerpt: "How generative AI is augmenting human creativity rather than replacing it.",
         content: "Generative AI tools are transforming how agencies work. From rapid prototyping to generating asset variations, AI is acting as a force multiplier for creative teams. However, the human touch remains essential for curation, strategy, and emotional resonance. We discuss how to integrate these tools ethically and effectively into your daily workflow."
@@ -128,6 +128,41 @@ const Blog = () => {
     const pillsRef = useRef([]);
     const blogCardsRef = useRef([]);
     const [selectedPost, setSelectedPost] = useState(null);
+    const [subscribeEmail, setSubscribeEmail] = useState('');
+    const [subscribeMessage, setSubscribeMessage] = useState('');
+
+    const handleSubscribe = async (e) => {
+        e.preventDefault();
+        if (!subscribeEmail) {
+            setSubscribeMessage('Please enter your email');
+            return;
+        }
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    access_key: '24081fbe-8e88-4c4f-bc82-a7c63fc7c77b',
+                    email: subscribeEmail,
+                    from_name: 'Core X Newsletter Subscriber'
+                })
+            });
+
+            if (response.ok) {
+                setSubscribeMessage('Thank you for subscribing!');
+                setSubscribeEmail('');
+                setTimeout(() => setSubscribeMessage(''), 3000);
+            } else {
+                setSubscribeMessage('Failed to subscribe. Please try again.');
+            }
+        } catch (error) {
+            setSubscribeMessage('Error subscribing. Please try again.');
+            console.error('Subscribe error:', error);
+        }
+    };
 
     const addToPills = (el) => {
         if (el && !pillsRef.current.includes(el)) {
@@ -348,12 +383,19 @@ const Blog = () => {
                         <input
                             type="email"
                             placeholder="Enter your email"
+                            value={subscribeEmail}
+                            onChange={(e) => setSubscribeEmail(e.target.value)}
                             className="flex-1 px-6 py-4 bg-white text-black rounded-xl font-poppins placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ccff00]"
                         />
-                        <button className="px-8 py-4 bg-[#ccff00] text-black rounded-xl font-poppins font-bold uppercase tracking-wider hover:bg-white transition-all duration-300">
+                        <button onClick={handleSubscribe} className="px-8 py-4 bg-[#ccff00] text-black rounded-xl font-poppins font-bold uppercase tracking-wider hover:bg-white transition-all duration-300">
                             Subscribe
                         </button>
                     </div>
+                    {subscribeMessage && (
+                        <p className="mt-4 text-center text-[#ccff00] font-poppins text-sm">
+                            {subscribeMessage}
+                        </p>
+                    )}
                 </div>
             </section>
 
