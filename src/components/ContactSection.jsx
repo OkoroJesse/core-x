@@ -59,33 +59,59 @@ const ContactSection = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate API call - replace with actual email service
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setSubmitted(true);
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: ''
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    access_key: '399af771-5739-4cdb-90f9-d7627fe3c1a6',
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    subject: formData.subject,
+                    message: formData.message,
+                    from_name: 'Core X Contact Form'
+                })
             });
 
-            // Reset success message after 4 seconds
-            setTimeout(() => setSubmitted(false), 4000);
-        }, 1500);
+            const result = await response.json();
+
+            if (result.success) {
+                setIsSubmitting(false);
+                setSubmitted(true);
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    subject: '',
+                    message: ''
+                });
+
+                // Reset success message after 4 seconds
+                setTimeout(() => setSubmitted(false), 4000);
+            } else {
+                setIsSubmitting(false);
+                alert('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            setIsSubmitting(false);
+            console.error('Error:', error);
+            alert('Error sending message. Please try again.');
+        }
     };
 
     const contactInfo = [
         {
             icon: <Mail className="w-6 h-6" />,
             label: "Email",
-            value: "hello.corex@gmail.com",
-            href: "mailto:hello.coreX@gmail.com"
+            value: "corexdigitalagency@gmail.com",
+            href: "mailto:corexdigitalagency@gmail.com"
         },
         {
             icon: <Phone className="w-6 h-6" />,
@@ -137,7 +163,7 @@ const ContactSection = () => {
                                             <h4 className="font-poppins font-bold text-black text-sm md:text-base">
                                                 {info.label}
                                             </h4>
-                                            <p className="font-poppins text-gray-600 text-xs md:text-sm">
+                                            <p className="font-poppins text-gray-600 text-xs md:text-xs lg:text-xs">
                                                 {info.value}
                                             </p>
                                         </div>

@@ -94,9 +94,9 @@ const FooterSection = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:hello.core-x@gmail.com" className="flex items-center gap-3 group">
+                                <a href="mailto:corexdigitalagency@gmail.com" className="flex items-center gap-3 group">
                                     <Mail className="w-5 h-5 text-[#ccff00] flex-shrink-0" />
-                                    <span className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors">hello.core-x@gmail.com</span>
+                                    <span className="text-gray-300 font-poppins text-sm hover:text-[#ccff00] transition-colors">corexdigitalagency@gmail.com</span>
                                 </a>
                             </li>
                             <li>

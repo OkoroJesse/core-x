@@ -123,7 +123,7 @@ const Contact = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    access_key: '24081fbe-8e88-4c4f-bc82-a7c63fc7c77b', // Replace with your Web3Forms Access Key
+                    access_key: '399af771-5739-4cdb-90f9-d7627fe3c1a6', // Replace with your Web3Forms Access Key
                     name: formData.name,
                     email: formData.email,
                     phone: formData.phone,
@@ -163,8 +163,8 @@ const Contact = () => {
         {
             icon: <Mail className="w-6 h-6" />,
             label: "Email",
-            value: "hello@corex.agency",
-            href: "mailto:hello@corex.agency",
+            value: "corexdigitalagency@gmail.com",
+            href: "mailto:corexdigitalagency@gmail.com",
             description: "Send us an email anytime"
         },
         {
