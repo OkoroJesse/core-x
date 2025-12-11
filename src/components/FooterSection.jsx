@@ -115,7 +115,7 @@ const FooterSection = () => {
                         © 2025 <a href="#" className="text-[#ccff00] hover:underline">Core X</a>. All Rights Reserved.
                     </p>
                     <p className="text-gray-400 font-poppins text-xs">
-                        Lead developer - <a href="#" className="text-[#ccff00] hover:underline">Jesse Chinedu</a>
+                        Lead developer - <a href="https://jesse-nu.vercel.app/" target='blank' className="text-[#ccff00] hover:underline">Jesse Chinedu</a>
                     </p>
                 </div>
             </div>
