@@ -63,7 +63,7 @@ const HeroSection = () => {
     };
 
     return (
-        <div ref={heroRef} id="home" className="relative w-full min-h-screen bg-zinc-900 text-white overflow-hidden flex flex-col">
+        <div ref={heroRef} id="home" className="relative w-screen min-h-screen bg-zinc-900 text-white overflow-hidden flex flex-col">
 
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
@@ -81,7 +81,7 @@ const HeroSection = () => {
             {/* Hero Content */}
             <main className="relative z-10 flex-grow flex flex-col justify-center px-6 max-w-7xl mx-auto w-full pt-32 pb-24">
 
-                <div className="max-w-5xl">
+                <div className="w-full">
                     {/* Main Heading */}
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-beyond leading-[1.1] tracking-wide mb-8">
                         <div className="overflow-hidden">

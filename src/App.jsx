@@ -6,6 +6,8 @@ import Services from './pages/Services';
 import Projects from './pages/Projects';
 import Blog from './pages/Blog';
 
+import { Analytics } from "@vercel/analytics/react"
+
 function App() {
   return (
     <Router>
@@ -17,6 +19,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/blog" element={<Blog />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }
