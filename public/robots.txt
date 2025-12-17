@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://corex.agency/sitemap.xml

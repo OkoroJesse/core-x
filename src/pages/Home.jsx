@@ -1,4 +1,5 @@
 import HeroSection from '../components/HeroSection';
+import Seo from '../components/Seo';
 import AboutSection from '../components/AboutSection';
 import StatsSection from '../components/StatsSection';
 import ServicesSection from '../components/ServicesSection';
@@ -14,6 +15,11 @@ import WhatsAppFloat from '../components/WhatsAppFloat';
 function Home() {
   return (
     <div className="bg-zinc-900 min-h-screen">
+      <Seo
+        title="Home"
+        description="Core X is a digital agency specializing in custom web development, seamless integrations, and product design for modern businesses."
+        canonical="/"
+      />
       <HeroSection />
       <AboutSection />
       <StatsSection />

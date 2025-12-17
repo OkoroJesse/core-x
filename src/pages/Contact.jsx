@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Zap, ArrowUpRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import Seo from '../components/Seo';
 import Button from '../components/Button';
 import FooterSection from '../components/FooterSection';
 import BackToTop from '../components/BackToTop';
@@ -210,6 +211,11 @@ const Contact = () => {
 
     return (
         <div ref={pageRef} className="w-full bg-white">
+            <Seo
+                title="Contact Us"
+                description="Get in touch with Core X. We're here to help you bring your digital vision to life."
+                canonical="/contact"
+            />
 
             {/* Navbar */}
             <Navbar isDark={true} />

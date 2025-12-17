@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Rocket, Target, Users, Zap } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import Seo from '../components/Seo';
 import FooterSection from '../components/FooterSection';
 import BackToTop from '../components/BackToTop';
 import WhatsAppFloat from '../components/WhatsAppFloat';
@@ -117,6 +118,11 @@ const About = () => {
 
     return (
         <div ref={pageRef} className="w-full bg-white">
+            <Seo
+                title="About Us"
+                description="Learn about Core X, a team of creative designers and developers dedicated to transforming businesses through digital excellence."
+                canonical="/about"
+            />
 
             {/* Navbar */}
             <Navbar isDark={true} />
@@ -263,7 +269,7 @@ const About = () => {
                                     className="w-full h-full object-cover"
                                 />
                             </div>
-                            
+
                             {/* Floating Card */}
                             <div className="absolute -bottom-12 -right-8 bg-white p-8 rounded-2xl shadow-2xl max-w-xs">
                                 <p className="text-gray-600 font-poppins text-sm mb-4">

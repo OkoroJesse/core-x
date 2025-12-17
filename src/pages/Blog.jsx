@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, X, Calendar, User } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import Seo from '../components/Seo';
 import Button from '../components/Button';
 import FooterSection from '../components/FooterSection';
 import BackToTop from '../components/BackToTop';
@@ -231,7 +232,11 @@ const Blog = () => {
 
     return (
         <div ref={pageRef} className="w-full bg-white">
-
+            <Seo
+                title="Blog"
+                description="Insights, trends, and stories from the world of digital innovation, web design, and development."
+                canonical="/blog"
+            />
             {/* Navbar */}
             <Navbar isDark={true} />
 

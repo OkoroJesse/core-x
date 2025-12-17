@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Code, Palette, Smartphone, Search, Wrench, Layers, ArrowUpRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import Seo from '../components/Seo';
 import Button from '../components/Button';
 import FooterSection from '../components/FooterSection';
 import BackToTop from '../components/BackToTop';
@@ -138,6 +139,11 @@ const Services = () => {
 
     return (
         <div ref={pageRef} className="w-full bg-white">
+            <Seo
+                title="Services"
+                description="Explore our comprehensive suite of professional services including Website Development, UI/UX Design, Mobile Apps, and SEO."
+                canonical="/services"
+            />
             {/* Navbar */}
             <Navbar isDark={true} />
 

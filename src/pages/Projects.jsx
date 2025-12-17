@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import Seo from '../components/Seo';
 import Button from '../components/Button';
 import FooterSection from '../components/FooterSection';
 import BackToTop from '../components/BackToTop';
@@ -130,6 +131,11 @@ const Projects = () => {
 
     return (
         <div ref={pageRef} className="w-full bg-white">
+            <Seo
+                title="Projects"
+                description="View our portfolio of successful projects spanning web development, design, mobile apps, and digital transformation."
+                canonical="/projects"
+            />
 
             {/* Navbar */}
             <Navbar isDark={true} />
